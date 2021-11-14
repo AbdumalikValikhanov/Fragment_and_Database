@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="#1845BC"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tablayout"
+        android:src="@drawable/space_header"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
     <com.google.android.material.tabs.TabLayout
+        android:background="@drawable/tablayout_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
         app:tabGravity="center"
@@ -21,4 +32,10 @@
 
 
     </com.google.android.material.tabs.TabLayout>
-</FrameLayout>
+    <androidx.viewpager.widget.ViewPager
+        app:layout_constraintTop_toBottomOf="@id/tablayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+    android:id="@+id/viewPager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"></androidx.viewpager.widget.ViewPager>
+</androidx.constraintlayout.widget.ConstraintLayout>
